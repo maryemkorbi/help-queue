@@ -15,6 +15,7 @@ class TicketController extends Controller
             'helping' => Ticket::with('topic')->helping()->get(),
             'waiting' => Ticket::with('topic')->waiting()->get(),
             'doneCount' => Ticket::where('status', 'done')->count(),
+            'topics' => Topic::withCount('tickets')->orderBy('name')->get(),
         ]);
     }
 
@@ -36,7 +37,7 @@ class TicketController extends Controller
             'name' => ['required', 'string', 'max:50'],
             'topic_id' => ['required', 'exists:topics,id'],
             'description' => ['nullable', 'string', 'max:500'],
-        ]);
+        ], [], ['topic_id' => 'topic']);
 
         Ticket::create($validated);
 

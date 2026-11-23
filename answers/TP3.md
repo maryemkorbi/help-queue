@@ -31,3 +31,20 @@ a program that could use it : a mobile app, or a javascript page that shows the 
 
 question 8
 [yes my neighbour's project started / no, the missing step was ...]
+
+bonus
+- i gave a third argument to validate() : ['topic_id' => 'topic'], so the error now says The selected topic is invalid. instead of topic id
+- on the queue page there is one link per topic with its number of tickets, i used Topic::withCount('tickets') in the controller and $topic->tickets_count in the view
+
+final questions
+
+1) what does Ticket::waiting() do and why a scope is better than repeating the where
+it gives only the tickets with status waiting sorted by id
+a scope is better cz the rule is written once in the model, i reuse it everywhere with a short name (index, show, queue.json) and if the rule changes i only change it in one place
+
+2) which table holds the topic_id column and why on that side
+the tickets table holds topic_id
+cz a ticket belongs to one topic but a topic has many tickets, so each ticket can store just one topic id, a topic cant store a list of ticket ids in one column
+
+3) who besides a browser could use /queue.json
+a mobile app, a javascript frontend, a screen in the classroom showing the queue, another website, postman or a python script, anything that can read json

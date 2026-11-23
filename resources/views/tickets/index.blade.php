@@ -5,6 +5,12 @@
 @section('content')
     <h1>Help queue</h1>
 
+    <p>
+        @foreach ($topics as $topic)
+            <a class="topic" href="{{ route('topics.show', $topic) }}">{{ $topic->name }} ({{ $topic->tickets_count }})</a>
+        @endforeach
+    </p>
+
     <h2>Being helped</h2>
     @forelse ($helping as $ticket)
         @include('tickets._card', ['ticket' => $ticket])
