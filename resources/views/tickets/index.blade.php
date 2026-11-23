@@ -4,6 +4,13 @@
 
 @section('content')
     <h1>Help queue</h1>
+
+    <p>
+        <a href="{{ route('tickets.index') }}">All</a>
+        @foreach ($topics as $topic)
+            · <a href="{{ route('tickets.index', ['topic' => $topic]) }}">{{ $topic }}</a>
+        @endforeach
+    </p>
     <p>{{ $tickets->count() }} waiting</p>
 
     @forelse ($tickets as $ticket)

@@ -55,3 +55,7 @@ route:list after Route::resource :
 question 8
 nothing changed, its the same 5 routes with the same urls, methods and names, but now its written in 2 lines instead of 5
 it works without changing anything cz my controller already uses the method names that Route::resource expects (index, create, store, show, destroy), and the routes already had the names tickets.index, tickets.show... and the parameter {ticket}
+
+bonus
+/tickets?topic=Git shows only the Git tickets, in index() i read the topic with $request->query('topic') and if there is one i add where('topic', ...) to the query
+above the list there is one link per topic, and All to see everything

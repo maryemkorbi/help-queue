@@ -8,11 +8,18 @@ use Illuminate\Validation\Rule;
 
 class TicketController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $tickets = Ticket::orderBy('created_at')->get();
+        $query = Ticket::orderBy('created_at');
 
-        return view('tickets.index', ['tickets' => $tickets]);
+        if ($request->query('topic')) {
+            $query->where('topic', $request->query('topic'));
+        }
+
+        return view('tickets.index', [
+            'tickets' => $query->get(),
+            'topics' => Ticket::TOPICS,
+        ]);
     }
 
     public function show(Ticket $ticket)
