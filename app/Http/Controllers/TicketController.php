@@ -19,7 +19,9 @@ class TicketController extends Controller
 
     public function show(Ticket $ticket)
     {
-        return view('tickets.show', ['ticket' => $ticket]);
+        $ahead = Ticket::waiting()->where('id', '<', $ticket->id)->count();
+
+        return view('tickets.show', ['ticket' => $ticket, 'ahead' => $ahead]);
     }
 
     public function create()
