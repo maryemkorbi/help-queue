@@ -15,6 +15,5 @@ Route::get('/hello/{name}', function (string $name) {
     return view('hello', ['name' => $name]);
 });
 
-Route::get('/tickets', [TicketController::class, 'index']);
-
-Route::get('/tickets/{ticket}', [TicketController::class, 'show']);
+Route::get('/tickets', [TicketController::class, 'index'])->name('tickets.index');
+Route::get('/tickets/{ticket}', [TicketController::class, 'show'])->name('tickets.show');
