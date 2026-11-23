@@ -14,3 +14,14 @@ laravel checks the routes from top to bottom, /tickets/{ticket} was before /tick
 question 4
 without @csrf i got 419 page expired
 the token protects against csrf attacks (cross site request forgery), its when another website tries to send a form to my app in my place without me knowing
+
+exercise 5
+1) empty form : The name field is required. and The topic field is required.
+2) name but no topic : The topic field is required.
+3) option changed to Cooking : The selected topic is invalid.
+
+question 5
+the name i typed stays in the field, its value="{{ old('name') }}" in the input that puts it back after the error
+
+question 6
+cz the user can change anything in the browser with the developer tools or send a request without the form, so the html cant be trusted, only the server can really check the data before saving it
