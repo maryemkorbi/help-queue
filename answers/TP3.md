@@ -28,3 +28,6 @@ question 7
 the list has [NUMBER] items, one for each waiting ticket
 the topic object of each item has id, name, created_at and updated_at
 a program that could use it : a mobile app, or a javascript page that shows the queue on a screen in the classroom, or postman, or a python script
+
+question 8
+[yes my neighbour's project started / no, the missing step was ...]
