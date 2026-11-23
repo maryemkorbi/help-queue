@@ -4,7 +4,7 @@
 
 @section('content')
     <h1>{{ $ticket->name }}</h1>
-    <p><span class="topic">{{ $ticket->topic }}</span> · {{ $ticket->status }}</p>
+    <p><span class="topic">{{ $ticket->topic->name }}</span> · {{ $ticket->status }}</p>
     <p>{{ $ticket->description ?? 'No description.' }}</p>
     <p>Asked {{ $ticket->created_at->diffForHumans() }}</p>
     @if ($ticket->status === 'waiting')
