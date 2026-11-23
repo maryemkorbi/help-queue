@@ -30,3 +30,28 @@ question 7
 the delete form has 2 hidden fields :
 - _token : the csrf token, it proves the form comes from my app
 - _method with the value DELETE : html forms can only send GET or POST, so laravel reads this field and treats the POST as a DELETE
+
+exercise 7
+route:list before Route::resource :
+
+  GET|HEAD   tickets .................. tickets.index › TicketController@index
+  POST       tickets .................. tickets.store › TicketController@store
+  GET|HEAD   tickets/create ......... tickets.create › TicketController@create
+  GET|HEAD   tickets/{ticket} ........... tickets.show › TicketController@show
+  DELETE     tickets/{ticket} ..... tickets.destroy › TicketController@destroy
+
+                                                          Showing [5] routes
+
+route:list after Route::resource :
+
+  GET|HEAD   tickets .................. tickets.index › TicketController@index
+  POST       tickets .................. tickets.store › TicketController@store
+  GET|HEAD   tickets/create ......... tickets.create › TicketController@create
+  GET|HEAD   tickets/{ticket} ........... tickets.show › TicketController@show
+  DELETE     tickets/{ticket} ..... tickets.destroy › TicketController@destroy
+
+                                                          Showing [5] routes
+
+question 8
+nothing changed, its the same 5 routes with the same urls, methods and names, but now its written in 2 lines instead of 5
+it works without changing anything cz my controller already uses the method names that Route::resource expects (index, create, store, show, destroy), and the routes already had the names tickets.index, tickets.show... and the parameter {ticket}
