@@ -7,11 +7,15 @@ use Illuminate\Http\Request;
 
 class TicketController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $tickets = Ticket::orderBy('created_at')->get();
+
         return view('tickets.index', ['tickets' => $tickets]);
     }
 
-    public function show(Ticket $ticket){
-        return view('tickets.show', ['ticket' => $ticket]);}
+    public function show(Ticket $ticket)
+    {
+        return view('tickets.show', ['ticket' => $ticket]);
+    }
 }
