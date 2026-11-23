@@ -59,3 +59,15 @@ it works without changing anything cz my controller already uses the method name
 bonus
 /tickets?topic=Git shows only the Git tickets, in index() i read the topic with $request->query('topic') and if there is one i add where('topic', ...) to the query
 above the list there is one link per topic, and All to see everything
+
+final questions
+
+1) why did /tickets/create answer 404 before its route was moved
+cz the routes are checked from top to bottom, /tickets/{ticket} was first so it caught /tickets/create and took create as a ticket id, no ticket has the id create so laravel gave 404
+
+2) what does @csrf protect against and which error do you get without it
+it protects against csrf attacks, when another website tries to send a form to my app using my session without me knowing, @csrf adds a secret token that only my app knows
+without it i get 419 page expired
+
+3) why must validation run on the server even when the form already limits the choices
+cz everything in the browser can be changed, with the developer tools or by sending a request directly, like the Cooking option in exercise 5, so only the server can be trusted to check the data before it goes in the database
