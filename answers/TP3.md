@@ -23,3 +23,8 @@ its the rule exists:topics,id, it checks that the id really exists in the topics
 
 question 6
 when i click the badge the topic page opens and it says [NUMBER] tickets
+
+question 7
+the list has [NUMBER] items, one for each waiting ticket
+the topic object of each item has id, name, created_at and updated_at
+a program that could use it : a mobile app, or a javascript page that shows the queue on a screen in the classroom, or postman, or a python script
