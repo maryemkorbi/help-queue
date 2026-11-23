@@ -3,15 +3,15 @@
 @section('title', 'Queue')
 
 @section('content')
-<h1>Help queue</h1>
-<p>{{ $tickets->count() }} waiting</p>
+    <h1>Help queue</h1>
+    <p>{{ $tickets->count() }} waiting</p>
 @forelse ($tickets as $ticket)
-<article class="ticket">
-<strong>{{ $loop->iteration }}. {{ $ticket->name }}</strong>
-<span class="topic">{{ $ticket->topic }}</span>
-<p>{{ $ticket->description }}</p>
-</article>
+    <article class="ticket">
+        <strong><a href="/tickets/{{ $ticket->id }}">{{ $loop->iteration }}. {{ $ticket->name }}</a></strong>
+        <span class="topic">{{ $ticket->topic }}</span>
+        <p>{{ $ticket->description }}</p>
+    </article>
 @empty
-<p>Nobody is waiting.</p>
+    <p>Nobody is waiting.</p>
 @endforelse
 @endsection

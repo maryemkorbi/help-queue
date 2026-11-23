@@ -14,3 +14,5 @@ Route::get('/hello/{name}', function (string $name) {
 });
 
 Route::get('/tickets', [TicketController::class, 'index']);
+
+Route::get('/tickets/{ticket}', [TicketController::class, 'show']);

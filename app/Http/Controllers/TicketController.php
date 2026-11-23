@@ -11,4 +11,7 @@ class TicketController extends Controller
         $tickets = Ticket::orderBy('created_at')->get();
         return view('tickets.index', ['tickets' => $tickets]);
     }
+
+    public function show(Ticket $ticket){
+        return view('tickets.show', ['ticket' => $ticket]);}
 }
