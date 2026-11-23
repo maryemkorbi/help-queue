@@ -12,3 +12,7 @@ so the scope makes a query that takes only the tickets with status waiting, sort
 question 3
 there are [NUMBER] people ahead of me
 i counted the Waiting section of the queue and its the same number, its all the waiting tickets that came before mine (smaller id)
+
+question 4
+the badges show json now, like {"id":2,"name":"Laravel","created_at":"...","updated_at":"..."}
+cz the topic column was deleted, now $ticket->topic is the relationship so it gives the whole Topic object, and when blade prints an object laravel turns it into json
