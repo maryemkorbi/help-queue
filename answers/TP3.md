@@ -10,7 +10,7 @@ select * from "tickets" where "status" = ? order by "id" asc
 so the scope makes a query that takes only the tickets with status waiting, sorted by id, the ? is replaced by waiting when the query runs
 
 question 3
-there are [NUMBER] people ahead of me
+there are 8 people ahead of me (my ticket is number 9 in the Waiting list)
 i counted the Waiting section of the queue and its the same number, its all the waiting tickets that came before mine (smaller id)
 
 question 4
@@ -22,10 +22,10 @@ i get The selected topic id is invalid.
 its the rule exists:topics,id, it checks that the id really exists in the topics table and there is no topic with id 99
 
 question 6
-when i click the badge the topic page opens and it says [NUMBER] tickets
+i clicked the Git badge, the topic page opens and it says 3 tickets
 
 question 7
-the list has [NUMBER] items, one for each waiting ticket
+the list has 9 items, one for each waiting ticket
 the topic object of each item has id, name, created_at and updated_at
 a program that could use it : a mobile app, or a javascript page that shows the queue on a screen in the classroom, or postman, or a python script
 
