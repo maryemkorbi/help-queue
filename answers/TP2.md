@@ -25,3 +25,8 @@ the name i typed stays in the field, its value="{{ old('name') }}" in the input 
 
 question 6
 cz the user can change anything in the browser with the developer tools or send a request without the form, so the html cant be trusted, only the server can really check the data before saving it
+
+question 7
+the delete form has 2 hidden fields :
+- _token : the csrf token, it proves the form comes from my app
+- _method with the value DELETE : html forms can only send GET or POST, so laravel reads this field and treats the POST as a DELETE
