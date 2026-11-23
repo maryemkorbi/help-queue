@@ -20,3 +20,6 @@ cz the topic column was deleted, now $ticket->topic is the relationship so it gi
 question 5
 i get The selected topic id is invalid.
 its the rule exists:topics,id, it checks that the id really exists in the topics table and there is no topic with id 99
+
+question 6
+when i click the badge the topic page opens and it says [NUMBER] tickets
